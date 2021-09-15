@@ -1,7 +1,5 @@
-## 4.1.7
-
-* Updated deps to work with flutter stable 2.0.1
-
+## 5.0.1
+* New release
 ## 4.1.6
 
 * use  `http: '>=0.12.2 <=0.13.0-nullsafety.0'`
@@ -110,7 +108,7 @@
 
 ## 3.1.0
 
-* Added `automaticallyAnimateToCurrentLocation` to fix https://github.com/humazed/google_map_location_picker/issues/24
+* Added `automaticallyAnimateToCurrentLocation` to fix https://github.com/elvisreyes/detodito_location_picker/issues/24
 
 ## 3.0.1
 

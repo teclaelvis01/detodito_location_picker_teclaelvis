@@ -1,16 +1,16 @@
-# google_map_location_picker [![Pub](https://img.shields.io/pub/v/google_map_location_picker.svg)](https://pub.dev/packages/google_map_location_picker)
+# detodito_location_picker [![Pub](https://img.shields.io/pub/v/detodito_location_picker.svg)](https://pub.dev/packages/detodito_location_picker)
 
 Location picker using the official [google_maps_flutter](https://pub.dev/packages/google_maps_flutter).
 
 I made This plugin because google deprecated [Place Picker](https://developers.google.com/places/android-sdk/placepicker).
 
 <p>
-  <img src="https://raw.githubusercontent.com/humazed/google_map_location_picker/master/art/location_picker.gif" width=265/>
-  <img src="https://raw.githubusercontent.com/humazed/google_map_location_picker/master/art/Screenshot_1.png" width=265 />
-  <img src="https://raw.githubusercontent.com/humazed/google_map_location_picker/master/art/Screenshot_2.png" width=265 />
+  <img src="https://raw.githubusercontent.com/elvisreyes/detodito_location_picker/master/art/location_picker.gif" width=265/>
+  <img src="https://raw.githubusercontent.com/elvisreyes/detodito_location_picker/master/art/Screenshot_1.png" width=265 />
+  <img src="https://raw.githubusercontent.com/elvisreyes/detodito_location_picker/master/art/Screenshot_2.png" width=265 />
 </p>
 
-[![Demo](https://raw.githubusercontent.com/humazed/google_map_location_picker/master/art/ios_demo.png?raw=true)](https://www.youtube.com/watch?v=Ev1tqijch1o)
+[![Demo](https://raw.githubusercontent.com/elvisreyes/detodito_location_picker/master/art/ios_demo.png?raw=true)](https://www.youtube.com/watch?v=Ev1tqijch1o)
 
 ## Using
 
@@ -20,7 +20,7 @@ Pubspec changes:
       dependencies: 
       
         google_maps_flutter: ^0.5.30
-        google_map_location_picker: ^3.3.4
+        detodito_location_picker: ^3.3.4
         flutter_localizations:
           sdk: flutter
 ```
@@ -29,7 +29,7 @@ Pubspec changes:
 For message localization inside the library please add in `MaterialApp`
 
 ```dart
-import 'package:google_map_location_picker/generated/l10n.dart' as location_picker;
+import 'package:detodito_location_picker/generated/l10n.dart' as location_picker;
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 MaterialApp(
@@ -48,7 +48,7 @@ MaterialApp(
 ```
 
 ```dart
-import 'package:google_map_location_picker/google_map_location_picker.dart';
+import 'package:detodito_location_picker/detodito_location_picker.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 LocationResult result = await showLocationPicker(context, apiKey);

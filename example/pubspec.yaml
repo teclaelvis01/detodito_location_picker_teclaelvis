@@ -1,5 +1,5 @@
-name: google_map_location_picker_example
-description: Demonstrates how to use the google_map_location_picker plugin.
+name: detodito_location_picker_example
+description: Demonstrates how to use the detodito_location_picker plugin.
 publish_to: 'none'
 version: 1.0.0
 
@@ -21,7 +21,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  google_map_location_picker:
+  detodito_location_picker:
     path: ../
 
 # For information on the generic Dart part of this file, see the

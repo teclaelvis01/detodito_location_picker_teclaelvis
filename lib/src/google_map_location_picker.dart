@@ -4,12 +4,12 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:google_map_location_picker/generated/l10n.dart';
-import 'package:google_map_location_picker/src/map.dart';
-import 'package:google_map_location_picker/src/providers/location_provider.dart';
-import 'package:google_map_location_picker/src/rich_suggestion.dart';
-import 'package:google_map_location_picker/src/search_input.dart';
-import 'package:google_map_location_picker/src/utils/uuid.dart';
+import 'package:detodito_location_picker/generated/l10n.dart';
+import 'package:detodito_location_picker/src/map.dart';
+import 'package:detodito_location_picker/src/providers/location_provider.dart';
+import 'package:detodito_location_picker/src/rich_suggestion.dart';
+import 'package:detodito_location_picker/src/search_input.dart';
+import 'package:detodito_location_picker/src/utils/uuid.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -174,7 +174,7 @@ class LocationPickerState extends State<LocationPicker> {
     }
 
     LocationUtils.getAppHeaders()
-        .then((headers) => http.get(Uri.parse(endpoint), headers: headers))
+        .then((headers) => http.get(endpoint, headers: headers))
         .then((response) {
       if (response.statusCode == 200) {
         Map<String, dynamic> data = jsonDecode(response.body);
@@ -217,13 +217,13 @@ class LocationPickerState extends State<LocationPicker> {
   void decodeAndSelectPlace(String placeId) {
     clearOverlay();
 
-    final endpoint =
+    String endpoint =
         "https://maps.googleapis.com/maps/api/place/details/json?key=${widget.apiKey}" +
             "&placeid=$placeId" +
             '&language=${widget.language}';
 
     LocationUtils.getAppHeaders()
-        .then((headers) => http.get(Uri.parse(endpoint), headers: headers))
+        .then((headers) => http.get(endpoint, headers: headers))
         .then((response) {
       if (response.statusCode == 200) {
         Map<String, dynamic> location =
@@ -285,15 +285,14 @@ class LocationPickerState extends State<LocationPicker> {
 
   /// Fetches and updates the nearby places to the provided lat,lng
   void getNearbyPlaces(LatLng latLng) {
-    LocationUtils.getAppHeaders().then((headers) {
-      var endpoint =
-          "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
-              "key=${widget.apiKey}&" +
-              "location=${latLng.latitude},${latLng.longitude}&radius=150" +
-              "&language=${widget.language}";
-
-      return http.get(Uri.parse(endpoint), headers: headers);
-    }).then((response) {
+    LocationUtils.getAppHeaders()
+        .then((headers) => http.get(
+            "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" +
+                "key=${widget.apiKey}&" +
+                "location=${latLng.latitude},${latLng.longitude}&radius=150" +
+                "&language=${widget.language}",
+            headers: headers))
+        .then((response) {
       if (response.statusCode == 200) {
         nearbyPlaces.clear();
         for (Map<String, dynamic> item
@@ -324,12 +323,10 @@ class LocationPickerState extends State<LocationPicker> {
   /// This method gets the human readable name of the location. Mostly appears
   /// to be the road name and the locality.
   Future reverseGeocodeLatLng(LatLng latLng) async {
-    final endpoint =
+    var response = await http.get(
         "https://maps.googleapis.com/maps/api/geocode/json?latlng=${latLng.latitude},${latLng.longitude}" +
             "&key=${widget.apiKey}" +
-            "&language=${widget.language}";
-
-    final response = await http.get(Uri.parse(endpoint),
+            "&language=${widget.language}",
         headers: await LocationUtils.getAppHeaders());
 
     if (response.statusCode == 200) {

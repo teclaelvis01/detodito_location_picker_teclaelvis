@@ -1,4 +1,4 @@
-package com.humazed.google_map_location_picker
+package com.elvisreyes.detodito_location_picker
 
 import android.app.Activity
 import android.content.pm.PackageInfo
@@ -19,7 +19,7 @@ class GoogleMapLocationPickerPlugin(act: Activity) : MethodCallHandler {
     companion object {
         @JvmStatic
         fun registerWith(registrar: Registrar) {
-            val channel = MethodChannel(registrar.messenger(), "google_map_location_picker")
+            val channel = MethodChannel(registrar.messenger(), "detodito_location_picker")
             channel.setMethodCallHandler(GoogleMapLocationPickerPlugin(registrar.activity()))
         }
     }

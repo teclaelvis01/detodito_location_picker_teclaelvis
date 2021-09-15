@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.humazed.google_map_location_picker_example">
+    package="com.elvisreyes.detodito_location_picker_example">
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -16,7 +16,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:icon="@mipmap/ic_launcher"
-        android:label="google_map_location_picker_example"
+        android:label="detodito_location_picker_example"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
             android:name=".MainActivity"

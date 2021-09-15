@@ -1,4 +1,4 @@
-group 'com.humazed.google_map_location_picker'
+group 'com.elvisreyes.detodito_location_picker'
 version '1.0-SNAPSHOT'
 
 buildscript {

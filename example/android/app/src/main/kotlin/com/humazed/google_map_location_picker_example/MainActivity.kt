@@ -1,4 +1,4 @@
-package com.humazed.google_map_location_picker_example
+package com.elvisreyes.detodito_location_picker_example
 
 import android.os.Bundle
 

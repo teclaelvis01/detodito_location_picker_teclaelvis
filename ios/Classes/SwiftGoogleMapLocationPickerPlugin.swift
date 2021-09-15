@@ -3,7 +3,7 @@ import UIKit
 
 public class SwiftGoogleMapLocationPickerPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "google_map_location_picker", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "detodito_location_picker", binaryMessenger: registrar.messenger())
     let instance = SwiftGoogleMapLocationPickerPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
